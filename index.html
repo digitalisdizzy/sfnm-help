@@ -45,26 +45,26 @@
     <script>
         function addDefaults(received){
             const toReturn = {...received}
-            if(!received.siteName){
+            if(received.siteName == null){
                 if(document.domain == "127.0.0.1"){
                     toReturn.siteName = "localhost"
                 } else {
                     toReturn.siteName = document.domain
                 }
             }
-            if(!received.headerText){
+            if(received.headerText == null){
                 toReturn.headerText = toReturn.siteName
             }
-            if(!received.footerText){
+            if(received.footerText == null){
                 toReturn.footerText = `© ${new Date().getFullYear()}`
             }
-            if(!received.heading){
+            if(received.heading == null){
                 toReturn.heading = "Site Unavailable"
             }
-            if(!received.subheading){
+            if(received.subheading == null){
                 toReturn.subheading = `${toReturn.siteName} is currently unavailable`
             }
-            if(!received.moreInfo){
+            if(received.moreInfo == null){
                 toReturn.moreInfo = ""
             }
             return toReturn
